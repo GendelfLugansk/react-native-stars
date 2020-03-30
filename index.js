@@ -8,10 +8,13 @@ import {
 } from 'react-native'
 
 export default class StarReview extends Component {
+  get displayValue() {
+    return this.props.display || this.props.value;
+  }
+  
   constructor(props) {
     super(props)
     // 'value' and 'rating' are deprecated and have become 'display' and 'default'
-    this.displayValue = props.display || props.value
     this.defaultRating = props.default || props.rating
     this.state = {
       rating: this.defaultRating
